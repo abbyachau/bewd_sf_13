@@ -16,10 +16,19 @@ require 'pry'
 require 'pry-byebug'
 require 'json'
 
-def connect_to_api(url)
+def connect_to_api(url) #pulling the api
   response = Typhoeus.get(url)
   JSON.parse(response.body)
 end
 
-reddit_url ='http://www.reddit.com/.json'
-reddit_json_response = connect_to_api(reddit_url)
+def stories(json_response)
+  stories = json_response["data"]["children"]
+  stories.each do | story |
+    story["data"]
+  end
+end
+
+
+url ='http://www.reddit.com/.json'
+json_response = connect_to_api(url)
+stories(json_response)
