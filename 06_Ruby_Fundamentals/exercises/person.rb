@@ -12,8 +12,11 @@ attr_accessor :name, :age, :home_town
 
 #instance_factory to support creating a new person using Person.new
   def initialize(name, age, home_town)
-    @name = name
-    @age = age
+    @name = name   #@name is instance attribute
+    @age = age #age is a local variable
     @home = home
   end
 end
+
+person = Person.new
+binding.pry

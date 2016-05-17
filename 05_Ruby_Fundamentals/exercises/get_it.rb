@@ -18,8 +18,21 @@ require 'json'
 
 def connect_to_api(url)
   response = Typhoeus.get(url)
-  JSON.parse(response.body)
+  JSON.parse!(response.body)
 end
 
-reddit_url ='http://www.reddit.com/.json'
-reddit_json_response = connect_to_api(reddit_url)
+url ='http://www.reddit.com/.json'
+json_response = connect_to_api(url)
+
+def stories(json_response)
+  stories = json_response["data"]["children"]
+  stories.each do | story |
+    story = create_story_hash(story["data"]) #story_hash = create_story_hash(story["data"])
+  end
+end
+
+def create_story_hash(story) #creates a story hash
+  {title: story["title"], upvotes: story["ups"], category: story["subreddit"]}
+end
+
+connect_to_api(url)

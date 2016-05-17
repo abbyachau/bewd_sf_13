@@ -15,11 +15,19 @@ class Thermostat
 
  #self.target , @target and target are all the same inside of this instance method
   def calibrate_temp
-    #use a conditional to calibrate the temperature
+    if current_temp > target #use a conditional to calibrate the temperature
+      puts "you are too hot"
+    elsif current_temp < target
+      puts "you are too cold"
+    else"just right"
+    end
   end
 
   def self.detect_temperature(all_temps, target_temp)
-    #loop through all temps, detect the temperature, then calibrate it
+    all_temps.each do |temp|
+        reading = Thermostat.new(temp, target_temp)#loop through all temps, detect the temperature, then calibrate it
+        reading.calibrate_temp
+      end
   end
 end
 
@@ -32,3 +40,10 @@ all_temps = [45,65,85,95, 66, 99, 75, 12, 22, 45, 65, 75, 70, 100, 10, 52, 22]
 target_temp = 75
 
 Thermostat.detect_temperature(all_temps, target_temp)
+
+#Pull in all temperature
+#check that you have all temps and the target temps
+# you know you need to call all_temp.each do |temp|
+# get the first reading and create an instance of thermostat for each thing in the array. create a reading for each temperature in the array. using thermatstat.new (i.e. themstate class)
+# call state at reading.calibrate_temp - create instance method that compares temperature - using conditional
+# call another method that measures temp up or down
