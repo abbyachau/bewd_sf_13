@@ -1,13 +1,31 @@
 require 'pry'
 require 'pry-byebug'
 
-class Apartment
-  attr_accessor :name, :url, :price, :neighborhood
+#create an apartment class using OOP principles
 
-  def initialize(name,url,price,neighborhood)
-    @name = name
-    @url = url
-    @price = price
-    @neighborhood = neighborhood
-  end
+class Apartment
+	
+	def initialize(query, min_price, max_price)
+		@price = price
+		@neighborhood = neighborhood
+		@name = name
+		@url = url
+	end
+
+	def price
+		@price
+	end
+
+	def neighborhood
+		@neighborhood
+	end
+
+	def name
+		@name
+	end
+
+	def url
+	@url
+	end
 end
+
