@@ -1,4 +1,24 @@
 Rails.application.routes.draw do
+
+  #all CRUD actions with resources
+  resources :artists
+
+  get 'artists/index'
+
+  get 'artists/show'
+
+  get 'artists/edit'
+
+  get 'artists/new'
+
+  get '/about', to: "static_pages#about", as: 'about'
+  get '/test', to: "static_pages#test", as: 'test'
+
+
+
+  #sets home_page
+  root 'static_pages#home' #controller_name#action_name
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
