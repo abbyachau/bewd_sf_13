@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   #all CRUD actions with resources
   resources :artists
-  
+
   #custom routes
   get 'about', to: "static_pages#about", as: 'about'
   get 'test', to: "static_pages#test", as: 'test'
