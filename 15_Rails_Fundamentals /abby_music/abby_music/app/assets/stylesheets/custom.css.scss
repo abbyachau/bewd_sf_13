@@ -1,0 +1,25 @@
+@import "bootstrap";
+
+//fonts
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,600italic,400italic);
+
+
+//font_class
+.OpenSansNormal {
+  font-family: 'Open Sans', sans-serif;
+  font-weight:300;
+}
+
+.OpenSansLight {
+  font-family: 'Open Sans', sans-serif;
+  font-weight:100;
+}
+
+.OpenSansBold {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+}
+
+.DeepRed {
+  font-color: #cc3333;
+}
